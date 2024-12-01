@@ -8,4 +8,4 @@ _Projeto criado em .net para estudos pessoais com o curso ministrado pelo "desen
 - Web: Projeto MVC, poderiamos usar um SPA, mas iniciamente usaremos o front com .net
 
 ## Boa Prática - API Authenticator
-1. Criar uma controller Base: Métodos compartilhaveis (MainController)
+1. Criar uma controller Base: Métodos compartilhaveis (MainController) - Response Customizado
