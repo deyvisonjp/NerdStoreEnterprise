@@ -1,0 +1,36 @@
+﻿@if (Context.User.Identity.IsAuthenticated)
+{
+    <div class="d-flex align-items-center">
+        <!-- Shopping Cart -->
+        <vc:shopping-cart class="me-3" />
+
+        <!-- User Dropdown -->
+        <div class="dropdown">
+            <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="" alt="User Avatar" class="rounded-circle me-2" style="width: 32px; height: 32px;" />
+                <span class="text-dark fw-bold">@Context.User.Identity.Name</span>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                <li>
+                    <a class="dropdown-item" asp-controller="Profile" asp-action="Index">Bem vindo!</a>
+                </li>
+                <li>
+                    <div class="dropdown-divider"></div>
+                </li>
+                <li>
+                    <a class="dropdown-item text-danger" asp-controller="IdeIdentidade" asp-action="Logout">Sair</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+}
+else
+{
+    <!-- Guest Options -->
+    <div class="text-end">
+        <div class="mt-1">
+            <a class="btn btn-outline-primary btn-sm me-2" asp-controller="Identidade" asp-action="Registro">Crie sua conta</a>
+            <a class="btn btn-primary btn-sm" asp-controller="Identidade" asp-action="Login">Login</a>
+        </div>
+    </div>
+}

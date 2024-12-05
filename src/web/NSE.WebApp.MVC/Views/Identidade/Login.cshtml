@@ -1,0 +1,44 @@
+﻿@model NSE.WebApp.MVC.Models.UserLogin
+
+@{
+    ViewData["Title"] = "Entrar";
+}
+
+<section class="section-content padding-y container d-flex justify-content-center align-items-center" style="min-height: 75vh;">
+    <vc:Summary></vc:Summary>
+
+    <div class="card shadow-lg" style="max-width: 400px; width: 100%;">
+        <div class="card-header text-center bg-primary text-white">
+            <h4 class="card-title mb-0">Bem-vindo de volta!</h4>
+        </div>
+        <div class="card-body">
+            <form asp-route-returnurl="@ViewData["ReturnUrl"]" method="post">
+                <div class="mb-3">
+                    <label asp-for="Email" class="form-label">E-mail</label>
+                    <input asp-for="Email" class="form-control" placeholder="Digite seu e-mail" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Password" class="form-label">Senha</label>
+                    <input type="password" asp-for="Password" class="form-control" placeholder="Digite sua senha" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-primary">Entrar</button>
+                </div>
+            </form>
+        </div>
+        <div class="card-footer text-center">
+            <p class="mb-0">
+                Não tem uma conta?
+                <a asp-controller="Identidade" asp-action="Register" class="text-primary fw-bold">Registre-se</a>
+            </p>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
