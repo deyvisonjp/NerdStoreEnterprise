@@ -1,0 +1,16 @@
+﻿@if (ViewData.ModelState.ErrorCount > 0)
+{
+    <div style="padding-top: 15px;"></div>
+    <div class="alert alert-danger text-center">
+        <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <h3 id="msgRetorno" style="padding-top: 20px">Eita Pega, Algo deu errado:</h3>
+        <div style="padding-top: 20px" class="text-danger">
+            @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+            {
+                <p>@error.ErrorMessage</p>
+            }
+        </div>
+    </div>
+}

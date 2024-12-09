@@ -43,15 +43,16 @@ public static class WebAppConfig
 
         app.UseRouting();
 
-        // Middlewares para autenticação/Autorização (se necessário)
+        // Middlewares para autenticação/Autorização
         app.UseAuthentication();
         app.UseAuthorization();
 
-        // Configuração de Health Checks
-        //app.MapHealthChecks("/health");
+        // Configuração de Health Checks (descomentado se necessário)
+        // app.MapHealthChecks("/health");
 
         app.MapControllerRoute(
             name: "default",
             pattern: "{controller=Home}/{action=Index}/{id?}");
     }
+
 }
